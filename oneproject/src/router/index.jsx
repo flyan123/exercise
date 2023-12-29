@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter as Router,Route,Switch,Routes } from 'react-router-dom'
+import { HashRouter as Router,Route,Routes } from 'react-router-dom'
 import Home from '../pages/Home'
 import Shop from '../pages/Shop'
 import User from '../pages/User'
@@ -9,6 +9,7 @@ const AppRouter=()=>{
     return(
         <Router>
             <TopNav/>
+            
             <Routes>
                 <Route path='/' Component={Home}></Route>
                 <Route path='/shop' Component={Shop}></Route>

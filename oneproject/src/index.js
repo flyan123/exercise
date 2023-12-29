@@ -7,11 +7,13 @@ import AppRouter from './router';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    {/* <App /> */}
-    <AppRouter/>
-    {/* Hello */}
-  </React.StrictMode>
+  <AppRouter/>
+  // 去除严格模式
+  // <React.StrictMode>
+  //   {/* <App /> */}
+  //   <AppRouter/>
+  //   {/* Hello */}
+  // </React.StrictMode>
 );
 
 
