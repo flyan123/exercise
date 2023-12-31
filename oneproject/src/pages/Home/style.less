@@ -1,4 +1,8 @@
 //搜索
+*{
+  margin: 0px;;
+  padding: 0px;
+}
 .HomeSearch {
   position: absolute;
   left: 20%;
@@ -26,14 +30,14 @@
 }
 // 轮播图
 #swiper-home {
-  width: 600px;
+  width: 700px;
   height: 300px;
   position: absolute;
   top: 35%;
   left: 10%;
   background-color: #ebebeb;
   // padding: 10px 10px #ebebeb;
-  outline: 15px solid #ebebeb;
+  outline: 25px solid #ebebeb;
   border-radius: 0.2em;
 }
 // 电影票片源
@@ -41,34 +45,162 @@
   position: absolute;
   top: 85%;
   left: 10%;
+  width: 740px;
 }
-// 一个子：电影
+// 一个子：正在热映电影
+.film-source-list{
+  // 1 2 两个换行
+  display: flex;
+  flex-wrap: wrap;
+  width: 750px;
+}
+.film-source-list li{
+  // 去li的点
+  list-style-type: none;
+  border: 1px solid #d3d3d3;
+  width: 160px;
+  height: 260px;
+  margin:0px 20px 40px 0px;
+}
 .film-source-all {
-  border: 1px solid #000;
-//   outline: 15px solid #ebebeb;
-  width: 200px;
-  height: 329px;
-
+  width: 160px;
+  height: 220px;
+  margin: 0px 35px 45px 0px ;
 }
 .film-source-img {
-    width: 200px;
+    width: 100%;
 }
 .film-source-name {
-    transform: translate3d(0px, -42px, 0px);
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    // display: inline;
+  transform: translate3d(6px, -31px, 0px);
+  color: #ffffff;
+  font-size: 13px;
+  width: 91px;
+  // 文本溢出为省略号
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+  overflow: hidden;
 }
 .film-source-score {
-    color: red;
-    transform: translate3d(167px, -59px, 0px);
-    font-size: 17px;
-    // display: inline;
+  color: red;
+  transform: translate3d(125px, -50px, 0px);
+  font-size: 17px;
+}
+#film-source-ticket a {
+  transform: translate3d(63px, -32px, 0px);
+  font-size: 14px;
+  color: #ef4238;
+  display: block;
+  text-decoration-line: none;
+}
+
+// 一个子：正在热映电影
+.film-up-list{
+  // 1 2 两个换行
+  display: flex;
+  flex-wrap: wrap;
+  width: 750px;
+  color: #c4c4c4;
+}
+.film-up-list li{
+  // 去li的点
+  list-style-type: none;
+  border: 1px solid #d3d3d3;
+  width: 160px;
+  height: 295px;
+  margin:0px 20px 40px 0px;
+}
+.film-up-all {
+  width: 160px;
+  height: 220px;
+  margin: 0px 35px 45px 0px ;
+}
+.film-up-img {
+    width: 100%;
+}
+.film-up-name {
+  transform: translate3d(6px, -31px, 0px);
+  color: #ffffff;
+  font-size: 13px;
+  width: 91px;
+  // 文本溢出为省略号
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+  overflow: hidden;
+}
+.film-up-people {
+  color: #d3a31a;
+  transform: translate3d(0px, -21px, 0px);
+  font-size: 15px;
+  background-color: #f7f5f5;
+  padding: 8px;
+}
+.film-up-future{
+  transform: translate3d(-28px, -21px, 0px);
+  position: relative;
 
 }
-.film-source-ticket {
-    transform: translate3d(73px, -33px, 0px);
-    font-size: 21px;
 
-
+.film-up-future-p{
+  position: absolute;
+  left: 17%;
+  transform: translate3d(0px,0px,0px);
+  padding: 9px 17px;
 }
+.film-up-future-in{
+  position: absolute;
+  right: -18%;
+  transform: translate3d(0px, 0px, 0px);
+  padding: 9px 23px;
+  border-left: 1px dotted #d3d3d3;
+}
+
+.film-up-time{
+  text-align: center;
+  position: relative;
+  bottom: -5%;
+}
+// 第三部分影视
+
+  // 一个子：第三部分影视
+.film-sources-list{
+  // 1 2 两个换行
+  display: flex;
+  flex-wrap: wrap;
+  width: 750px;
+}
+.film-sources-list li{
+  // 去li的点
+  list-style-type: none;
+  // border: 1px solid #d3d3d3;
+  width: 350px;
+  height: 260px;
+  margin:0px 20px 40px 0px;
+}
+.film-sources-all {
+  width: 160px;
+  height: 220px;
+  margin: 0px 35px 45px 0px ;
+}
+.film-sources-img {
+    width: 100%;
+}
+.film-sources-name {
+  transform: translate3d(6px, -31px, 0px);
+  color: #ffffff;
+  font-size: 13px;
+  width: 91px;
+  // 文本溢出为省略号
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+  overflow: hidden;
+}
+.film-sources-score {
+  color: red;
+  transform: translate3d(125px, -50px, 0px);
+  font-size: 17px;
+}
+
+
