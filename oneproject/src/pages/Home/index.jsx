@@ -11,7 +11,7 @@ const Home = () => {
             {/* 搜索框 */}
             <HomeSearch />
             {/* 电影轮播图 */}
-            <div>
+            <div className='left-main'>
                 <div id='swiper-home'>
                     <p
                         style={{ fontSize: '30px', color: 'crimson' }}
@@ -22,10 +22,12 @@ const Home = () => {
                 </div>
             </div>
 
-
+{/* 左边内容 */}
             <div className='film-source'>
-                {/* 正在热映 */}
 
+
+
+                {/* 正在热映 */}
                 <div>
                     <p
                         style={{ fontSize: '25px', color: 'red' }}
@@ -249,6 +251,7 @@ const Home = () => {
                     <p style={{ fontSize: '25px', color: 'skyblue' }}
                     ><strong>即将上映（109部）</strong></p><br />
                     {/* 内容 */}
+
                     <ul className='film-up-list'>
 
                         <li>
@@ -275,9 +278,9 @@ const Home = () => {
                                 {/* 预告片、预告 */}
                                 <div className='film-up-future'>
 
-                                   <div className='film-up-future-p'>
-                                     <a className='film-up-future-p-a'>预告片</a>
-                                   </div>
+                                    <div className='film-up-future-p'>
+                                        <a className='film-up-future-p-a'>预告片</a>
+                                    </div>
 
                                     <div className='film-up-future-in'>
                                         <a className='film-up-future-in-a'>预告</a>
@@ -285,7 +288,7 @@ const Home = () => {
 
                                 </div>
 
-                            </div><br/>
+                            </div><br />
                             <div className='film-up-time'>2024年1月5日上映</div>
                         </li>
 
@@ -316,7 +319,7 @@ const Home = () => {
                                     <a className='film-up-future-in'>预告</a>
                                 </div>
 
-                            </div><br/>
+                            </div><br />
                             <div className='film-up-time'>2024年1月5日上映</div>
                         </li>
 
@@ -347,7 +350,7 @@ const Home = () => {
                                     <a className='film-up-future-in'>预告</a>
                                 </div>
 
-                            </div><br/>
+                            </div><br />
                             <div className='film-up-time'>2024年1月5日上映</div>
                         </li>
 
@@ -378,7 +381,7 @@ const Home = () => {
                                     <a className='film-up-future-in'>预告</a>
                                 </div>
 
-                            </div><br/>
+                            </div><br />
                             <div className='film-up-time'>2024年1月5日上映</div>
                         </li>
 
@@ -409,7 +412,7 @@ const Home = () => {
                                     <a className='film-up-future-in'>预告</a>
                                 </div>
 
-                            </div><br/>
+                            </div><br />
                             <div className='film-up-time'>2024年1月5日上映</div>
                         </li>
 
@@ -440,7 +443,7 @@ const Home = () => {
                                     <a className='film-up-future-in'>预告</a>
                                 </div>
 
-                            </div><br/>
+                            </div><br />
                             <div className='film-up-time'>2024年1月5日上映</div>
                         </li>
 
@@ -471,7 +474,7 @@ const Home = () => {
                                     <a className='film-up-future-in'>预告</a>
                                 </div>
 
-                            </div><br/>
+                            </div><br />
                             <div className='film-up-time'>2024年1月5日上映</div>
                         </li>
 
@@ -502,47 +505,222 @@ const Home = () => {
                                     <a className='film-up-future-in'>预告</a>
                                 </div>
 
-                            </div><br/>
+                            </div><br />
                             <div className='film-up-time'>2024年1月5日上映</div>
                         </li>
                     </ul>
 
-                </div><br/>
+                </div><br />
 
                 <div>
+
+                    {/* 第三部分影视片 */}
+                    <div>
+                        <ul className='film-sources-list'>
+                            {/* long */}
+                            <li style={{width: "341px"}}>
+                                <div className='film-sources-all'>
+                                    {/* 图片 */}
+                                    <a href='#'>
+                                        <div >
+                                            <img
+                                                style={{width: "341px"}}
+                                                className='film-sources-img'
+                                                src='https://p0.meituan.net/movie/9bf6ede4308db272cd699d82e7d487a853438.jpg@350w_220h_1e_1c' />
+                                        </div>
+
+                                        {/* 名称 */}
+                                        <div className='film-sources-name'>
+                                            <strong>夏洛特烦恼</strong>
+                                        </div>
+                                        {/* 评分 */}
+                                        <div className='film-sources-score'
+                                            style={{transform: "translate3d(316px, -50px, 0px)"}}
+                                        >
+                                            9.0
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            {/* short */}
+                            <li>
+                                <div className='film-sources-all'>
+                                    {/* 图片 */}
+                                    <a href='#'>
+                                        <div >
+                                            <img
+                                                className='film-sources-img'
+                                                src='https://p0.pipi.cn/mmdb/d2dad592b12f2ab12d339e7ef5bd56a01e21d.jpg?imageView2/1/w/160/h/220' />
+                                        </div>
+
+                                        {/* 名称 */}
+                                        <div className='film-sources-name'>
+                                            <strong>夏洛特烦恼</strong>
+                                        </div>
+                                        {/* 评分 */}
+                                        <div className='film-sources-score'>
+                                            9.0
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div className='film-sources-all'>
+                                    {/* 图片 */}
+                                    <a href='#'>
+                                        <div >
+                                            <img
+                                                className='film-sources-img'
+                                                src='https://p0.pipi.cn/mmdb/d2dad592b12f2ab12d339e7ef5bd56a01e21d.jpg?imageView2/1/w/160/h/220' />
+                                        </div>
+
+                                        {/* 名称 */}
+                                        <div className='film-sources-name'>
+                                            <strong>夏洛特烦恼</strong>
+                                        </div>
+                                        {/* 评分 */}
+                                        <div className='film-sources-score'>
+                                            9.0
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div className='film-sources-all'>
+                                    {/* 图片 */}
+                                    <a href='#'>
+                                        <div >
+                                            <img
+                                                className='film-sources-img'
+                                                src='https://p0.pipi.cn/mmdb/d2dad592b12f2ab12d339e7ef5bd56a01e21d.jpg?imageView2/1/w/160/h/220' />
+                                        </div>
+
+                                        {/* 名称 */}
+                                        <div className='film-sources-name'>
+                                            <strong>夏洛特烦恼</strong>
+                                        </div>
+                                        {/* 评分 */}
+                                        <div className='film-sources-score'>
+                                            9.0
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div className='film-sources-all'>
+                                    {/* 图片 */}
+                                    <a href='#'>
+                                        <div >
+                                            <img
+                                                className='film-sources-img'
+                                                src='https://p0.pipi.cn/mmdb/d2dad592b12f2ab12d339e7ef5bd56a01e21d.jpg?imageView2/1/w/160/h/220' />
+                                        </div>
+
+                                        {/* 名称 */}
+                                        <div className='film-sources-name'>
+                                            <strong>夏洛特烦恼</strong>
+                                        </div>
+                                        {/* 评分 */}
+                                        <div className='film-sources-score'>
+                                            9.0
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div className='film-sources-all'>
+                                    {/* 图片 */}
+                                    <a href='#'>
+                                        <div >
+                                            <img
+                                                className='film-sources-img'
+                                                src='https://p0.pipi.cn/mmdb/d2dad592b12f2ab12d339e7ef5bd56a01e21d.jpg?imageView2/1/w/160/h/220' />
+                                        </div>
+
+                                        {/* 名称 */}
+                                        <div className='film-sources-name'>
+                                            <strong>夏洛特烦恼</strong>
+                                        </div>
+                                        {/* 评分 */}
+                                        <div className='film-sources-score'>
+                                            9.0
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div className='film-sources-all'>
+                                    {/* 图片 */}
+                                    <a href='#'>
+                                        <div >
+                                            <img
+                                                className='film-sources-img'
+                                                src='https://p0.pipi.cn/mmdb/d2dad592b12f2ab12d339e7ef5bd56a01e21d.jpg?imageView2/1/w/160/h/220' />
+                                        </div>
+
+                                        {/* 名称 */}
+                                        <div className='film-sources-name'>
+                                            <strong>夏洛特烦恼</strong>
+                                        </div>
+                                        {/* 评分 */}
+                                        <div className='film-sources-score'>
+                                            9.0
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+{/* 右边内容 */}
+            <div className='right-main'>
+                {/* 图片 */}
+                <div className='right-main-logo'>
                     
-                {/* 第三部分影视片 */}
-                <div>
-                    <ul className='film-sources-list'>
-                        <li>
-                            <div className='film-sources-all'>
-                            {/* 图片 */}
+                </div>
+                {/* 今日票房 */}
+                <div className='today-ticket'>
+                    <ul>
+                        {/* 1 */}
+                        <li className='today-ticket-one'>
                             <a href='#'>
-                                <div >
-                                    <img
-                                        className='film-source-img'
-                                        src='https://p0.meituan.net/movie/9bf6ede4308db272cd699d82e7d487a853438.jpg@350w_220h_1e_1c' />
+                                <div className='today-ticket-photo'>
+                                    <img src='https://p0.pipi.cn/friday/1709606769068a4e346864b11b696d02.jpg?imageView2/1/w/120/h/80'/>
                                 </div>
-
-                                {/* 名称 */}
-                                <div className='film-sources-name'>
-                                    <strong>年会不能停！</strong>
-                                </div>
-                                {/* 评分 */}
-                                <div className='film-sources-score'>
-                                    9.0
+                                <div className='today-ticket-name'>
+                                    <span>电影名字</span>
+                                    <p>12312万</p>
                                 </div>
                             </a>
-                        </div>
                         </li>
+                        {/* 2 */}
+                        {/* <li>
+                            <a>
+                                <span>
+                                    <i>1</i>
+                                    <span>电影名</span>
+                                    <span>122万</span>
+                                </span>
+                            </a>
+                        </li> */}
                     </ul>
+                </div>
+
+                {/* 最受期待 */}
+                <div className='expect-ticket'>
+
+                </div>
+
+                {/* 排行榜 */}
+                <div className='top-ticket'>
 
                 </div>
             </div>
 
-            </div>
-
-            
         </div>
 
     )

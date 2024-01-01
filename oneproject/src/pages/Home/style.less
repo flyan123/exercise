@@ -3,6 +3,14 @@
   margin: 0px;;
   padding: 0px;
 }
+a{
+  // 去除a的下划线
+  text-decoration:none;
+}
+ul li{
+  list-style-type: none;
+}
+
 .HomeSearch {
   position: absolute;
   left: 20%;
@@ -163,28 +171,30 @@
 }
 // 第三部分影视
 
-  // 一个子：第三部分影视
+  // 一个子：第三部分影视long
 .film-sources-list{
   // 1 2 两个换行
   display: flex;
   flex-wrap: wrap;
   width: 750px;
+  position: relative;
 }
 .film-sources-list li{
   // 去li的点
   list-style-type: none;
   // border: 1px solid #d3d3d3;
-  width: 350px;
-  height: 260px;
-  margin:0px 20px 40px 0px;
+  width: 160px;
+  // height: 260px;
+  margin:0px 20px 0px 0px;
 }
 .film-sources-all {
-  width: 160px;
-  height: 220px;
-  margin: 0px 35px 45px 0px ;
+  // width: 160px;
+  // height: 220px;
+  margin: 0px 35px 0px 0px ;
 }
 .film-sources-img {
-    width: 100%;
+    width: 160px;
+    // width: 350px;//long
 }
 .film-sources-name {
   transform: translate3d(6px, -31px, 0px);
@@ -199,8 +209,26 @@
 }
 .film-sources-score {
   color: red;
-  transform: translate3d(125px, -50px, 0px);
+  // transform: translate3d(316px, -50px, 0px);
+  transform: translate3d(129px, -50px, 0px);
   font-size: 17px;
 }
 
 
+// 右边内容
+.right-main{
+  width: 466px;
+  height: 600px;
+  background-color: bisque;
+  transform: translateX(948px);
+}
+.today-ticket-photo{
+  float: left;
+  // width: 50%;
+}
+.today-ticket-photo img{
+  width: 50%;
+}
+.today-ticket-name{
+  float: right;
+}
