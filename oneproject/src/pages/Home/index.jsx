@@ -22,7 +22,7 @@ const Home = () => {
                 </div>
             </div>
 
-{/* 左边内容 */}
+            {/* 左边内容 */}
             <div className='film-source'>
 
 
@@ -518,13 +518,13 @@ const Home = () => {
                     <div>
                         <ul className='film-sources-list'>
                             {/* long */}
-                            <li style={{width: "341px"}}>
+                            <li style={{ width: "341px" }}>
                                 <div className='film-sources-all'>
                                     {/* 图片 */}
                                     <a href='#'>
                                         <div >
                                             <img
-                                                style={{width: "341px"}}
+                                                style={{ width: "341px" }}
                                                 className='film-sources-img'
                                                 src='https://p0.meituan.net/movie/9bf6ede4308db272cd699d82e7d487a853438.jpg@350w_220h_1e_1c' />
                                         </div>
@@ -535,7 +535,7 @@ const Home = () => {
                                         </div>
                                         {/* 评分 */}
                                         <div className='film-sources-score'
-                                            style={{transform: "translate3d(316px, -50px, 0px)"}}
+                                            style={{ transform: "translate3d(316px, -50px, 0px)" }}
                                         >
                                             9.0
                                         </div>
@@ -676,48 +676,323 @@ const Home = () => {
             </div>
 
 
-{/* 右边内容 */}
+            {/* 右边内容 */}
             <div className='right-main'>
                 {/* 图片 */}
                 <div className='right-main-logo'>
-                    
+
                 </div>
                 {/* 今日票房 */}
                 <div className='today-ticket'>
+                    <p style={{ color: 'red', fontSize: '30px', margin: '25px 0px' }}>今日票房</p>
                     <ul>
                         {/* 1 */}
                         <li className='today-ticket-one'>
                             <a href='#'>
                                 <div className='today-ticket-photo'>
-                                    <img src='https://p0.pipi.cn/friday/1709606769068a4e346864b11b696d02.jpg?imageView2/1/w/120/h/80'/>
+                                    <img src='https://p0.pipi.cn/friday/1709606769068a4e346864b11b696d02.jpg?imageView2/1/w/120/h/80' />
                                 </div>
                                 <div className='today-ticket-name'>
-                                    <span>电影名字</span>
-                                    <p>12312万</p>
+                                    <span className='today-ticket-name-zi'>一闪一闪亮晶晶</span>
+                                    <br />
+
+                                    <p className='today-ticket-name-number'>12312万</p>
                                 </div>
                             </a>
                         </li>
                         {/* 2 */}
-                        {/* <li>
+                        <li className='today-ticket-two'>
                             <a>
                                 <span>
-                                    <i>1</i>
-                                    <span>电影名</span>
-                                    <span>122万</span>
+                                    <i className='today-ticket-two-i'>2</i>
+                                    <span className='today-ticket-two-name'>年会不能停！</span>
+                                    <span className='today-ticket-two-number'>122万</span>
                                 </span>
                             </a>
-                        </li> */}
+                        </li>
+
+                        {/* 3 */}
+                        <li className='today-ticket-two'>
+                            <a>
+                                <span>
+                                    <i className='today-ticket-two-i'>3</i>
+                                    <span className='today-ticket-two-name'>年会不能停！</span>
+                                    <span className='today-ticket-two-number'>122万</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        {/* 4 */}
+                        <li className='today-ticket-two'>
+                            <a>
+                                <span>
+                                    <i className='today-ticket-two-i'>4</i>
+                                    <span className='today-ticket-two-name'>年会不能停！</span>
+                                    <span className='today-ticket-two-number'>122万</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        {/* 5 */}
+                        <li className='today-ticket-two'>
+                            <a>
+                                <span>
+                                    <i className='today-ticket-two-i'>5</i>
+                                    <span className='today-ticket-two-name'>年会不能停！</span>
+                                    <span className='today-ticket-two-number'>122万</span>
+                                </span>
+                            </a>
+                        </li>
+
+
                     </ul>
                 </div>
 
                 {/* 最受期待 */}
                 <div className='expect-ticket'>
+                    <p style={{ color: '#d1c08d', fontSize: '30px', margin: '25px 0px' }}>最受期待</p>
+                    <div>
+                        <ul>
+                            {/* 1 */}
+                            <li className='expect-ticket-one'>
+                                <a href='#'>
+                                    <div className='expect-ticket-photo'>
+                                        <img src='https://p0.pipi.cn/mmdb/fb73862f8eaf2ac69621f0befccf7a5f5f8b4.jpg?imageView2/1/w/140/h/194' />
+                                    </div>
+                                    <div className='expect-ticket-name'>
+                                        <span className='expect-ticket-name-zi'>熊出没</span>
+                                        <br />
+                                        <p className='expect-ticket-name-time'>上映时间：2024年4月22号</p>
+                                        <p className='expect-ticket-name-number'>12312万人想看</p>
+                                    </div>
+                                </a>
+                            </li><br/>
 
+                            {/* 2 */}
+                            <li className='expect-ticket-two'>
+                             <a href='#'>
+                                    <div className='expect-ticket-two-photo'>
+                                        <img src='https://p0.meituan.net/mmc/f5523879ec43bdcbda484c5f0e7cf3262776.png@170w_118h_1e_1c' />
+                                    </div>
+                                    <div className='expect-ticket-two-name'>
+                                        <span className='expect-ticket-two-name-zi'>飞驰人生</span>
+                                        <p className='expect-ticket-two-number'>12312万人想看</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li className='expect-ticket-two-r'>
+                             <a href='#'>
+                                    <div className='expect-ticket-two-photo'>
+                                        <img src='https://p0.meituan.net/mmc/f5523879ec43bdcbda484c5f0e7cf3262776.png@170w_118h_1e_1c' />
+                                    </div>
+                                    <div className='expect-ticket-two-name'>
+                                        <span className='expect-ticket-two-name-zi'>飞驰人生</span>
+                                        <p className='expect-ticket-two-number'>12312万人想看</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <br/>
+
+                           {/* 3 */}
+                           <li className='expect-ticket-three'>
+                              <a>
+                                <span>
+                                    <i className='expect-ticket-three-i'>4</i>
+                                    <span className='expect-ticket-three-name'>年会不能停！</span>
+                                    <span className='expect-ticket-three-number'>122万人想看</span>
+                                </span>
+                              </a>
+                             </li>
+                             <li className='expect-ticket-three'>
+                              <a>
+                                <span>
+                                    <i className='expect-ticket-three-i'>5</i>
+                                    <span className='expect-ticket-three-name'>年会不能停！</span>
+                                    <span className='expect-ticket-three-number'>122万人想看</span>
+                                </span>
+                              </a>
+                             </li>
+                             <li className='expect-ticket-three'>
+                              <a>
+                                <span>
+                                    <i className='expect-ticket-three-i'>6</i>
+                                    <span className='expect-ticket-three-name'>年会不能停！</span>
+                                    <span className='expect-ticket-three-number'>122万人想看</span>
+                                </span>
+                              </a>
+                             </li>
+                             <li className='expect-ticket-three'>
+                              <a>
+                                <span>
+                                    <i className='expect-ticket-three-i'>7</i>
+                                    <span className='expect-ticket-three-name'>年会不能停！</span>
+                                    <span className='expect-ticket-three-number'>122万人想看</span>
+                                </span>
+                              </a>
+                             </li>
+                             <li className='expect-ticket-three'>
+                              <a>
+                                <span>
+                                    <i className='expect-ticket-three-i'>8</i>
+                                    <span className='expect-ticket-three-name'>年会不能停！</span>
+                                    <span className='expect-ticket-three-number'>122万人想看</span>
+                                </span>
+                              </a>
+                             </li>
+                             <li className='expect-ticket-three'>
+                              <a>
+                                <span>
+                                    <i className='expect-ticket-three-i'>9</i>
+                                    <span className='expect-ticket-three-name'>年会不能停！</span>
+                                    <span className='expect-ticket-three-number'>122万人想看</span>
+                                </span>
+                              </a>
+                             </li>
+                             
+
+                       
+                        </ul>
+                    </div>
                 </div>
 
                 {/* 排行榜 */}
                 <div className='top-ticket'>
+                    <p style={{color:'#d1c08d',fontSize:'30px'}}>TOP 100</p>
+                    <ul>
+                        {/* 1 */}
+                        <li className='top-ticket-one'>
+                            <a href='#'>
+                                <div className='top-ticket-photo'>
+                                    <img src='https://p0.meituan.net/movie/574c998b534c4354e46e8c0cf89ca76037249.jpg@120w_80h_1e_1c' />
+                                </div>
+                                <div className='top-ticket-name'>
+                                    <span className='top-ticket-name-zi'>我不是药神先生</span>
+                                    <br />
 
+                                    <p className='top-ticket-name-number'>9.6分</p>
+                                </div>
+                            </a>
+                        </li>
+                        {/* 2 */}
+                        <li className='top-ticket-two'>
+                            <a>
+                                <span>
+                                    <i className='top-ticket-two-i'>2</i>
+                                    <span className='top-ticket-two-name'>年会不能停！</span>
+                                    <span className='top-ticket-two-number'>9.0分</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        {/* 3 */}
+                        <li className='top-ticket-two'>
+                            <a>
+                                <span>
+                                    <i className='top-ticket-two-i'>3</i>
+                                    <span className='top-ticket-two-name'>年会不能停！</span>
+                                    <span className='top-ticket-two-number'>9.0分</span>
+                                </span>
+                            </a>
+                        </li>
+
+                         {/* 3 */}
+                         <li className='top-ticket-two'>
+                            <a>
+                                <span>
+                                    <i className='top-ticket-two-i'>3</i>
+                                    <span className='top-ticket-two-name'>年会不能停！</span>
+                                    <span className='top-ticket-two-number'>9.0分</span>
+                                </span>
+                            </a>
+                        </li>
+
+                         {/* 3 */}
+                         <li className='top-ticket-two'>
+                            <a>
+                                <span>
+                                    <i className='top-ticket-two-i'>3</i>
+                                    <span className='top-ticket-two-name'>年会不能停！</span>
+                                    <span className='top-ticket-two-number'>9.0分</span>
+                                </span>
+                            </a>
+                        </li>
+
+                         {/* 3 */}
+                         <li className='top-ticket-two'>
+                            <a>
+                                <span>
+                                    <i className='top-ticket-two-i'>3</i>
+                                    <span className='top-ticket-two-name'>年会不能停！</span>
+                                    <span className='top-ticket-two-number'>9.0分</span>
+                                </span>
+                            </a>
+                        </li>
+
+                         {/* 3 */}
+                         <li className='top-ticket-two'>
+                            <a>
+                                <span>
+                                    <i className='top-ticket-two-i'>3</i>
+                                    <span className='top-ticket-two-name'>年会不能停！</span>
+                                    <span className='top-ticket-two-number'>9.0分</span>
+                                </span>
+                            </a>
+                        </li>
+
+                         {/* 3 */}
+                         <li className='top-ticket-two'>
+                            <a>
+                                <span>
+                                    <i className='top-ticket-two-i'>3</i>
+                                    <span className='top-ticket-two-name'>年会不能停！</span>
+                                    <span className='top-ticket-two-number'>9.0分</span>
+                                </span>
+                            </a>
+                        </li>
+                         {/* 3 */}
+                         <li className='top-ticket-two'>
+                            <a>
+                                <span>
+                                    <i className='top-ticket-two-i'>3</i>
+                                    <span className='top-ticket-two-name'>年会不能停！</span>
+                                    <span className='top-ticket-two-number'>9.0分</span>
+                                </span>
+                            </a>
+                        </li>
+                         {/* 3 */}
+                         <li className='top-ticket-two'>
+                            <a>
+                                <span>
+                                    <i className='top-ticket-two-i'>3</i>
+                                    <span className='top-ticket-two-name'>年会不能停！</span>
+                                    <span className='top-ticket-two-number'>9.0分</span>
+                                </span>
+                            </a>
+                        </li>
+                         {/* 3 */}
+                         <li className='top-ticket-two'>
+                            <a>
+                                <span>
+                                    <i className='top-ticket-two-i'>3</i>
+                                    <span className='top-ticket-two-name'>年会不能停！</span>
+                                    <span className='top-ticket-two-number'>9.0分</span>
+                                </span>
+                            </a>
+                        </li>
+
+                       
+
+
+                    </ul>
+                </div>
+            </div>
+
+            {/* 底部基础信息 */}
+            <div className='di-main'>
+                <div className='di-main-wen'>
+                <p>商务合作邮箱：v@maoyan.com 客服电话：10105335 违法和不良信息/涉未成年人有害信息举报电话：4006018900</p>
+                <p>用户举报/涉未成年人有害信息举报邮箱：tousujubao@meituan.com 舞弊线索举报邮箱：wubijubao@maoyan.com</p>
+                <p>广播电视节目制作经营许可证 （京）字第08478号  网络文化经营许可证 京网文（2022）1334-041号</p>
                 </div>
             </div>
 

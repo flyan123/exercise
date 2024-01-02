@@ -8,9 +8,11 @@ import TopNav from '../components/TopNav/indext'
 const AppRouter=()=>{
     return(
         <Router>
+          
            <div style={{width:'100%'}}>
-           <TopNav/>
+           <TopNav />
            </div>
+           
             
             <Routes>
                 <Route path='/' Component={Home}></Route>
