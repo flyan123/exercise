@@ -1,5 +1,6 @@
 import React, { useState }  from "react";
 import "./style.less"
+// 跳转路由
 import { NavLink } from "react-router-dom";
 
 
@@ -17,7 +18,7 @@ const TopNav=()=>{
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink  to='/shop' id="shopname">
+                    <NavLink  to='/nowfil' id="shopname">
                         分类
                     </NavLink>
                 </li>

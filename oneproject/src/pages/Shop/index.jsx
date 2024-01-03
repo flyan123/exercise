@@ -1,9 +1,10 @@
-import React from 'react'
+import React  from 'react'
 
-const Shop=()=>{
+
+const  Shop = () =>{
     return(
         <div>
-            购票
+            经典影片
         </div>
     )
 }
