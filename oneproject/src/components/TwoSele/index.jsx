@@ -31,12 +31,12 @@ const TwoSele = () => {
                     </NavLink>
                 </li>
                 <li>剧情</li>
-                {TwoSeledate.map((id,name)=>{
+                {/* {TwoSeledate.map((id,name)=>{
                     <li key={id}>{name}</li>
-                })}
+                })} */}
                  {TwoSeledate.map(TwoSeledates=>
-            <li key={TwoSeledates.id}>
-              {TwoSeledates.name} 
+                <li key={TwoSeledates.id}>
+                {TwoSeledates.name} 
               
              </li> 
           )}
