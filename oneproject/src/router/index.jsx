@@ -11,7 +11,8 @@ import UpFil from '../pages/Shop/Shopye/UpFil'
 import LoveCla  from '../pages/Shop/Shopyedif/LoveCla'
 import Comedy from '../pages/Shop/Shopyedif/Comedy'
 import Cartoon from '../pages/Shop/Shopyedif/Cartoon'
-
+// 注册页
+import Register from '../pages/User/Register/index'
 
 import TopNav from '../components/TopNav/indext'
 
@@ -37,6 +38,8 @@ const AppRouter=()=>{
                 <Route path='/lovecla' Component={LoveCla}></Route>
                 <Route path='/comedy' Component={Comedy}></Route>
                 <Route path='/cartoon' Component={Cartoon}></Route>
+                {/* 注册页 */}
+                <Route path='/register' Component={Register}></Route>
             </Routes>
         </Router>
     )

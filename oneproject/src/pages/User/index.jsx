@@ -1,5 +1,7 @@
 import React from 'react'
 import "./style.less"
+import { NavLink } from "react-router-dom";
+
 
 export default function User() {
 
@@ -29,6 +31,9 @@ function Login() {
                         </label><br />
                         <button type='submit' class='loginsumbit'>登  入</button>
                     </form>
+                    <NavLink exact to='/register' id="registername" >
+                        注册账号
+                    </NavLink>
                 </div>
             </div>
         </div>
