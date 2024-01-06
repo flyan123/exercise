@@ -1,13 +1,26 @@
-import React from 'react'
+import {React,useState} from 'react'
 import "./style.less"
 import Swiper from '../../components/Swiper'
 import Banner1 from '../../assets/images/banner1.png'
 import Banner2 from '../../assets/images/banner2.png'
 import Banner3 from '../../assets/images/banner3.png'
+import data from './data/data.json'
+import updata from './data/updata.json'
+import soudata from './data/soudata.json'
+import today from './data/today.json'
+import expect from './data/expect.json'
+import topdata from './data/topdata.json'
+// import onehome from '../detail/onehome'
 
 const Home = () => {
+    // const [data, setData] = useState(require('./data.json'))
+    // 年会不能停！的详情页
+    const onehandleClick = () => {  
+        window.location.href = 'http://localhost:3000/#/onehome';  
+      };  
     return (
         <div>
+            
             {/* 搜索框 */}
             <HomeSearch />
             {/* 电影轮播图 */}
@@ -34,9 +47,9 @@ const Home = () => {
                     ><strong>正在热映（102部）</strong></p><br />
 
                     <ul className='film-source-list'>
-                        <li><div className='film-source-all'>
+                        <li ><div className='film-source-all' onChange={onehandleClick}>
                             {/* 图片 */}
-                            <a href='#'>
+                            <a href='http://localhost:3000/#/onehome'>
                                 <div >
                                     <img
                                         className='film-source-img'
@@ -60,22 +73,25 @@ const Home = () => {
                             </div>
 
                         </div></li>
-                        <li><div className='film-source-all'>
+                        {data.map(Objects => (
+                            // <div key={key}>{key}: {data[key]}</div>
+                            <li key={Objects.id}>
+                                <div className='film-source-all'>
                             {/* 图片 */}
                             <a href='#'>
                                 <div >
                                     <img
                                         className='film-source-img'
-                                        src='https://p0.pipi.cn/mmdb/fb73862f2ffc7eb860f2aab62cb4a844c40f0.jpg?imageView2/1/w/160/h/220' />
+                                        src={Objects.src} />
                                 </div>
 
                                 {/* 名称 */}
                                 <div className='film-source-name'>
-                                    <strong>年会不能停！</strong>
+                                    <strong>{Objects.name}</strong>
                                 </div>
                                 {/* 评分 */}
                                 <div className='film-source-score'>
-                                    9.0
+                                    {Objects.score}
                                 </div>
                             </a>
                             {/* 购票：点击会红 */}
@@ -86,166 +102,11 @@ const Home = () => {
                             </div>
 
                         </div></li>
-                        <li><div className='film-source-all'>
-                            {/* 图片 */}
-                            <a href='#'>
-                                <div >
-                                    <img
-                                        className='film-source-img'
-                                        src='https://p0.pipi.cn/mmdb/fb73862f2ffc7eb860f2aab62cb4a844c40f0.jpg?imageView2/1/w/160/h/220' />
-                                </div>
-
-                                {/* 名称 */}
-                                <div className='film-source-name'>
-                                    <strong>年会不能停！</strong>
-                                </div>
-                                {/* 评分 */}
-                                <div className='film-source-score'>
-                                    9.0
-                                </div>
-                            </a>
-                            {/* 购票：点击会红 */}
-                            <div id='film-source-ticket'>
-                                <a href="/cinemas?movieId=1461561" target="_blank" >
-                                    购  票
-                                </a>
-                            </div>
-
-                        </div></li>
-                        <li><div className='film-source-all'>
-                            {/* 图片 */}
-                            <a href='#'>
-                                <div >
-                                    <img
-                                        className='film-source-img'
-                                        src='https://p0.pipi.cn/mmdb/fb73862f2ffc7eb860f2aab62cb4a844c40f0.jpg?imageView2/1/w/160/h/220' />
-                                </div>
-
-                                {/* 名称 */}
-                                <div className='film-source-name'>
-                                    <strong>年会不能停！</strong>
-                                </div>
-                                {/* 评分 */}
-                                <div className='film-source-score'>
-                                    9.0
-                                </div>
-                            </a>
-                            {/* 购票：点击会红 */}
-                            <div id='film-source-ticket'>
-                                <a href="/cinemas?movieId=1461561" target="_blank" >
-                                    购  票
-                                </a>
-                            </div>
-
-                        </div></li>
-                        <li><div className='film-source-all'>
-                            {/* 图片 */}
-                            <a href='#'>
-                                <div >
-                                    <img
-                                        className='film-source-img'
-                                        src='https://p0.pipi.cn/mmdb/fb73862f2ffc7eb860f2aab62cb4a844c40f0.jpg?imageView2/1/w/160/h/220' />
-                                </div>
-
-                                {/* 名称 */}
-                                <div className='film-source-name'>
-                                    <strong>年会不能停！</strong>
-                                </div>
-                                {/* 评分 */}
-                                <div className='film-source-score'>
-                                    9.0
-                                </div>
-                            </a>
-                            {/* 购票：点击会红 */}
-                            <div id='film-source-ticket'>
-                                <a href="/cinemas?movieId=1461561" target="_blank" >
-                                    购  票
-                                </a>
-                            </div>
-
-                        </div></li>
-                        <li><div className='film-source-all'>
-                            {/* 图片 */}
-                            <a href='#'>
-                                <div >
-                                    <img
-                                        className='film-source-img'
-                                        src='https://p0.pipi.cn/mmdb/fb73862f2ffc7eb860f2aab62cb4a844c40f0.jpg?imageView2/1/w/160/h/220' />
-                                </div>
-
-                                {/* 名称 */}
-                                <div className='film-source-name'>
-                                    <strong>年会不能停！</strong>
-                                </div>
-                                {/* 评分 */}
-                                <div className='film-source-score'>
-                                    9.0
-                                </div>
-                            </a>
-                            {/* 购票：点击会红 */}
-                            <div id='film-source-ticket'>
-                                <a href="/cinemas?movieId=1461561" target="_blank" >
-                                    购  票
-                                </a>
-                            </div>
-
-                        </div></li>
-                        <li><div className='film-source-all'>
-                            {/* 图片 */}
-                            <a href='#'>
-                                <div >
-                                    <img
-                                        className='film-source-img'
-                                        src='https://p0.pipi.cn/mmdb/fb73862f2ffc7eb860f2aab62cb4a844c40f0.jpg?imageView2/1/w/160/h/220' />
-                                </div>
-
-                                {/* 名称 */}
-                                <div className='film-source-name'>
-                                    <strong>年会不能停！</strong>
-                                </div>
-                                {/* 评分 */}
-                                <div className='film-source-score'>
-                                    9.0
-                                </div>
-                            </a>
-                            {/* 购票：点击会红 */}
-                            <div id='film-source-ticket'>
-                                <a href="/cinemas?movieId=1461561" target="_blank" >
-                                    购  票
-                                </a>
-                            </div>
-
-                        </div></li>
-                        <li><div className='film-source-all'>
-                            {/* 图片 */}
-                            <a href='#'>
-                                <div >
-                                    <img
-                                        className='film-source-img'
-                                        src='https://p0.pipi.cn/mmdb/fb73862f2ffc7eb860f2aab62cb4a844c40f0.jpg?imageView2/1/w/160/h/220' />
-                                </div>
-
-                                {/* 名称 */}
-                                <div className='film-source-name'>
-                                    <strong>年会不能停！</strong>
-                                </div>
-                                {/* 评分 */}
-                                <div className='film-source-score'>
-                                    9.0
-                                </div>
-                            </a>
-                            {/* 购票：点击会红 */}
-                            <div id='film-source-ticket'>
-                                <a href="/cinemas?movieId=1461561" target="_blank" >
-                                    购  票
-                                </a>
-                            </div>
-
-                        </div></li>
+                            
+                        ))}
                     </ul>
-
-
                 </div>
+
                 {/* 即将上映 */}
                 <div className='film-up'>
                     <p style={{ fontSize: '25px', color: 'skyblue' }}
@@ -289,229 +150,52 @@ const Home = () => {
                                 </div>
 
                             </div><br />
-                            <div className='film-up-time'>2024年1月5日上映</div>
+                            <div className='film-up-time'>1月5日上映</div>
                         </li>
-
-                        <li>
+                        {updata.map(updatas=>(
+                            <li key={updatas.id}>
                             <div className='film-up-all'>
                                 {/* 图片 */}
                                 <a href='#'>
                                     <div >
                                         <img
                                             className='film-up-img'
-                                            src='https://p0.pipi.cn/mmdb/fb73862f7a32ff0e13338f51b1fb31279ac9c.jpg?imageView2/1/w/218/h/300' />
+                                            src={updatas.src} />
                                     </div>
 
                                     {/* 名称 */}
                                     <div className='film-up-name'>
-                                        <strong>时光之子</strong>
+                                        <strong>{updatas.name}</strong>
                                     </div>
                                 </a>
 
                                 {/* 想看人数 */}
                                 <div className='film-up-people'>
-                                    2112人想看
+                                    {updatas.people}人想看
                                 </div>
 
                                 {/* 预告片、预告 */}
                                 <div className='film-up-future'>
-                                    <a className='film-up-future-p'>预告片</a>
-                                    <a className='film-up-future-in'>预告</a>
+
+                                    <div className='film-up-future-p'>
+                                        <a className='film-up-future-p-a'>预告片</a>
+                                    </div>
+
+                                    <div className='film-up-future-in'>
+                                        <a className='film-up-future-in-a'>预告</a>
+                                    </div>
+
                                 </div>
 
                             </div><br />
-                            <div className='film-up-time'>2024年1月5日上映</div>
+                            <div className='film-up-time'>{updatas.time}上映</div>
                         </li>
+                        ))}
 
-                        <li>
-                            <div className='film-up-all'>
-                                {/* 图片 */}
-                                <a href='#'>
-                                    <div >
-                                        <img
-                                            className='film-up-img'
-                                            src='https://p0.pipi.cn/mmdb/fb73862f7a32ff0e13338f51b1fb31279ac9c.jpg?imageView2/1/w/218/h/300' />
-                                    </div>
-
-                                    {/* 名称 */}
-                                    <div className='film-up-name'>
-                                        <strong>时光之子</strong>
-                                    </div>
-                                </a>
-
-                                {/* 想看人数 */}
-                                <div className='film-up-people'>
-                                    2112人想看
-                                </div>
-
-                                {/* 预告片、预告 */}
-                                <div className='film-up-future'>
-                                    <a className='film-up-future-p'>预告片</a>
-                                    <a className='film-up-future-in'>预告</a>
-                                </div>
-
-                            </div><br />
-                            <div className='film-up-time'>2024年1月5日上映</div>
-                        </li>
-
-                        <li>
-                            <div className='film-up-all'>
-                                {/* 图片 */}
-                                <a href='#'>
-                                    <div >
-                                        <img
-                                            className='film-up-img'
-                                            src='https://p0.pipi.cn/mmdb/fb73862f7a32ff0e13338f51b1fb31279ac9c.jpg?imageView2/1/w/218/h/300' />
-                                    </div>
-
-                                    {/* 名称 */}
-                                    <div className='film-up-name'>
-                                        <strong>时光之子</strong>
-                                    </div>
-                                </a>
-
-                                {/* 想看人数 */}
-                                <div className='film-up-people'>
-                                    2112人想看
-                                </div>
-
-                                {/* 预告片、预告 */}
-                                <div className='film-up-future'>
-                                    <a className='film-up-future-p'>预告片</a>
-                                    <a className='film-up-future-in'>预告</a>
-                                </div>
-
-                            </div><br />
-                            <div className='film-up-time'>2024年1月5日上映</div>
-                        </li>
-
-                        <li>
-                            <div className='film-up-all'>
-                                {/* 图片 */}
-                                <a href='#'>
-                                    <div >
-                                        <img
-                                            className='film-up-img'
-                                            src='https://p0.pipi.cn/mmdb/fb73862f7a32ff0e13338f51b1fb31279ac9c.jpg?imageView2/1/w/218/h/300' />
-                                    </div>
-
-                                    {/* 名称 */}
-                                    <div className='film-up-name'>
-                                        <strong>时光之子</strong>
-                                    </div>
-                                </a>
-
-                                {/* 想看人数 */}
-                                <div className='film-up-people'>
-                                    2112人想看
-                                </div>
-
-                                {/* 预告片、预告 */}
-                                <div className='film-up-future'>
-                                    <a className='film-up-future-p'>预告片</a>
-                                    <a className='film-up-future-in'>预告</a>
-                                </div>
-
-                            </div><br />
-                            <div className='film-up-time'>2024年1月5日上映</div>
-                        </li>
-
-                        <li>
-                            <div className='film-up-all'>
-                                {/* 图片 */}
-                                <a href='#'>
-                                    <div >
-                                        <img
-                                            className='film-up-img'
-                                            src='https://p0.pipi.cn/mmdb/fb73862f7a32ff0e13338f51b1fb31279ac9c.jpg?imageView2/1/w/218/h/300' />
-                                    </div>
-
-                                    {/* 名称 */}
-                                    <div className='film-up-name'>
-                                        <strong>时光之子</strong>
-                                    </div>
-                                </a>
-
-                                {/* 想看人数 */}
-                                <div className='film-up-people'>
-                                    2112人想看
-                                </div>
-
-                                {/* 预告片、预告 */}
-                                <div className='film-up-future'>
-                                    <a className='film-up-future-p'>预告片</a>
-                                    <a className='film-up-future-in'>预告</a>
-                                </div>
-
-                            </div><br />
-                            <div className='film-up-time'>2024年1月5日上映</div>
-                        </li>
-
-                        <li>
-                            <div className='film-up-all'>
-                                {/* 图片 */}
-                                <a href='#'>
-                                    <div >
-                                        <img
-                                            className='film-up-img'
-                                            src='https://p0.pipi.cn/mmdb/fb73862f7a32ff0e13338f51b1fb31279ac9c.jpg?imageView2/1/w/218/h/300' />
-                                    </div>
-
-                                    {/* 名称 */}
-                                    <div className='film-up-name'>
-                                        <strong>时光之子</strong>
-                                    </div>
-                                </a>
-
-                                {/* 想看人数 */}
-                                <div className='film-up-people'>
-                                    2112人想看
-                                </div>
-
-                                {/* 预告片、预告 */}
-                                <div className='film-up-future'>
-                                    <a className='film-up-future-p'>预告片</a>
-                                    <a className='film-up-future-in'>预告</a>
-                                </div>
-
-                            </div><br />
-                            <div className='film-up-time'>2024年1月5日上映</div>
-                        </li>
-
-                        <li>
-                            <div className='film-up-all'>
-                                {/* 图片 */}
-                                <a href='#'>
-                                    <div >
-                                        <img
-                                            className='film-up-img'
-                                            src='https://p0.pipi.cn/mmdb/fb73862f7a32ff0e13338f51b1fb31279ac9c.jpg?imageView2/1/w/218/h/300' />
-                                    </div>
-
-                                    {/* 名称 */}
-                                    <div className='film-up-name'>
-                                        <strong>时光之子</strong>
-                                    </div>
-                                </a>
-
-                                {/* 想看人数 */}
-                                <div className='film-up-people'>
-                                    2112人想看
-                                </div>
-
-                                {/* 预告片、预告 */}
-                                <div className='film-up-future'>
-                                    <a className='film-up-future-p'>预告片</a>
-                                    <a className='film-up-future-in'>预告</a>
-                                </div>
-
-                            </div><br />
-                            <div className='film-up-time'>2024年1月5日上映</div>
-                        </li>
+                        
                     </ul>
 
                 </div><br />
-
                 <div>
 
                     {/* 第三部分影视片 */}
@@ -564,111 +248,29 @@ const Home = () => {
                                     </a>
                                 </div>
                             </li>
-                            <li>
+                            {soudata.map(soudatas=>(
+                                <li key={soudatas.id}>
                                 <div className='film-sources-all'>
                                     {/* 图片 */}
                                     <a href='#'>
                                         <div >
                                             <img
                                                 className='film-sources-img'
-                                                src='https://p0.pipi.cn/mmdb/d2dad592b12f2ab12d339e7ef5bd56a01e21d.jpg?imageView2/1/w/160/h/220' />
+                                                src={soudatas.src} />
                                         </div>
 
                                         {/* 名称 */}
                                         <div className='film-sources-name'>
-                                            <strong>夏洛特烦恼</strong>
+                                            <strong>{soudatas.name}</strong>
                                         </div>
                                         {/* 评分 */}
                                         <div className='film-sources-score'>
-                                            9.0
+                                            {soudatas.source}
                                         </div>
                                     </a>
                                 </div>
                             </li>
-                            <li>
-                                <div className='film-sources-all'>
-                                    {/* 图片 */}
-                                    <a href='#'>
-                                        <div >
-                                            <img
-                                                className='film-sources-img'
-                                                src='https://p0.pipi.cn/mmdb/d2dad592b12f2ab12d339e7ef5bd56a01e21d.jpg?imageView2/1/w/160/h/220' />
-                                        </div>
-
-                                        {/* 名称 */}
-                                        <div className='film-sources-name'>
-                                            <strong>夏洛特烦恼</strong>
-                                        </div>
-                                        {/* 评分 */}
-                                        <div className='film-sources-score'>
-                                            9.0
-                                        </div>
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div className='film-sources-all'>
-                                    {/* 图片 */}
-                                    <a href='#'>
-                                        <div >
-                                            <img
-                                                className='film-sources-img'
-                                                src='https://p0.pipi.cn/mmdb/d2dad592b12f2ab12d339e7ef5bd56a01e21d.jpg?imageView2/1/w/160/h/220' />
-                                        </div>
-
-                                        {/* 名称 */}
-                                        <div className='film-sources-name'>
-                                            <strong>夏洛特烦恼</strong>
-                                        </div>
-                                        {/* 评分 */}
-                                        <div className='film-sources-score'>
-                                            9.0
-                                        </div>
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div className='film-sources-all'>
-                                    {/* 图片 */}
-                                    <a href='#'>
-                                        <div >
-                                            <img
-                                                className='film-sources-img'
-                                                src='https://p0.pipi.cn/mmdb/d2dad592b12f2ab12d339e7ef5bd56a01e21d.jpg?imageView2/1/w/160/h/220' />
-                                        </div>
-
-                                        {/* 名称 */}
-                                        <div className='film-sources-name'>
-                                            <strong>夏洛特烦恼</strong>
-                                        </div>
-                                        {/* 评分 */}
-                                        <div className='film-sources-score'>
-                                            9.0
-                                        </div>
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div className='film-sources-all'>
-                                    {/* 图片 */}
-                                    <a href='#'>
-                                        <div >
-                                            <img
-                                                className='film-sources-img'
-                                                src='https://p0.pipi.cn/mmdb/d2dad592b12f2ab12d339e7ef5bd56a01e21d.jpg?imageView2/1/w/160/h/220' />
-                                        </div>
-
-                                        {/* 名称 */}
-                                        <div className='film-sources-name'>
-                                            <strong>夏洛特烦恼</strong>
-                                        </div>
-                                        {/* 评分 */}
-                                        <div className='film-sources-score'>
-                                            9.0
-                                        </div>
-                                    </a>
-                                </div>
-                            </li>
+                            ))}
                         </ul>
 
                     </div>
@@ -693,7 +295,7 @@ const Home = () => {
                                     <img src='https://p0.pipi.cn/friday/1709606769068a4e346864b11b696d02.jpg?imageView2/1/w/120/h/80' />
                                 </div>
                                 <div className='today-ticket-name'>
-                                    <span className='today-ticket-name-zi'>一闪一闪亮晶晶</span>
+                                    <span className='today-ticket-name-zi'>年会不能停！</span>
                                     <br />
 
                                     <p className='today-ticket-name-number'>12312万</p>
@@ -705,46 +307,22 @@ const Home = () => {
                             <a>
                                 <span>
                                     <i className='today-ticket-two-i'>2</i>
-                                    <span className='today-ticket-two-name'>年会不能停！</span>
+                                    <span className='today-ticket-two-name'>金手指</span>
                                     <span className='today-ticket-two-number'>122万</span>
                                 </span>
                             </a>
                         </li>
-
-                        {/* 3 */}
-                        <li className='today-ticket-two'>
+                        { today.map(todays=>(
+                            <li className='today-ticket-two' key={todays.id}>
                             <a>
                                 <span>
-                                    <i className='today-ticket-two-i'>3</i>
-                                    <span className='today-ticket-two-name'>年会不能停！</span>
-                                    <span className='today-ticket-two-number'>122万</span>
+                                    <i className='today-ticket-two-i'>{todays.i}</i>
+                                    <span className='today-ticket-two-name'>{todays.name}</span>
+                                    <span className='today-ticket-two-number'>{todays.number}万</span>
                                 </span>
                             </a>
                         </li>
-
-                        {/* 4 */}
-                        <li className='today-ticket-two'>
-                            <a>
-                                <span>
-                                    <i className='today-ticket-two-i'>4</i>
-                                    <span className='today-ticket-two-name'>年会不能停！</span>
-                                    <span className='today-ticket-two-number'>122万</span>
-                                </span>
-                            </a>
-                        </li>
-
-                        {/* 5 */}
-                        <li className='today-ticket-two'>
-                            <a>
-                                <span>
-                                    <i className='today-ticket-two-i'>5</i>
-                                    <span className='today-ticket-two-name'>年会不能停！</span>
-                                    <span className='today-ticket-two-number'>122万</span>
-                                </span>
-                            </a>
-                        </li>
-
-
+                        ))}
                     </ul>
                 </div>
 
@@ -766,11 +344,11 @@ const Home = () => {
                                         <p className='expect-ticket-name-number'>12312万人想看</p>
                                     </div>
                                 </a>
-                            </li><br/>
+                            </li><br />
 
                             {/* 2 */}
                             <li className='expect-ticket-two'>
-                             <a href='#'>
+                                <a href='#'>
                                     <div className='expect-ticket-two-photo'>
                                         <img src='https://p0.meituan.net/mmc/f5523879ec43bdcbda484c5f0e7cf3262776.png@170w_118h_1e_1c' />
                                     </div>
@@ -781,7 +359,7 @@ const Home = () => {
                                 </a>
                             </li>
                             <li className='expect-ticket-two-r'>
-                             <a href='#'>
+                                <a href='#'>
                                     <div className='expect-ticket-two-photo'>
                                         <img src='https://p0.meituan.net/mmc/f5523879ec43bdcbda484c5f0e7cf3262776.png@170w_118h_1e_1c' />
                                     </div>
@@ -791,73 +369,39 @@ const Home = () => {
                                     </div>
                                 </a>
                             </li>
-                            <br/>
+                            <br />
 
-                           {/* 3 */}
-                           <li className='expect-ticket-three'>
-                              <a>
-                                <span>
-                                    <i className='expect-ticket-three-i'>4</i>
-                                    <span className='expect-ticket-three-name'>年会不能停！</span>
-                                    <span className='expect-ticket-three-number'>122万人想看</span>
-                                </span>
-                              </a>
-                             </li>
-                             <li className='expect-ticket-three'>
-                              <a>
-                                <span>
-                                    <i className='expect-ticket-three-i'>5</i>
-                                    <span className='expect-ticket-three-name'>年会不能停！</span>
-                                    <span className='expect-ticket-three-number'>122万人想看</span>
-                                </span>
-                              </a>
-                             </li>
-                             <li className='expect-ticket-three'>
-                              <a>
-                                <span>
-                                    <i className='expect-ticket-three-i'>6</i>
-                                    <span className='expect-ticket-three-name'>年会不能停！</span>
-                                    <span className='expect-ticket-three-number'>122万人想看</span>
-                                </span>
-                              </a>
-                             </li>
-                             <li className='expect-ticket-three'>
-                              <a>
-                                <span>
-                                    <i className='expect-ticket-three-i'>7</i>
-                                    <span className='expect-ticket-three-name'>年会不能停！</span>
-                                    <span className='expect-ticket-three-number'>122万人想看</span>
-                                </span>
-                              </a>
-                             </li>
-                             <li className='expect-ticket-three'>
-                              <a>
-                                <span>
-                                    <i className='expect-ticket-three-i'>8</i>
-                                    <span className='expect-ticket-three-name'>年会不能停！</span>
-                                    <span className='expect-ticket-three-number'>122万人想看</span>
-                                </span>
-                              </a>
-                             </li>
-                             <li className='expect-ticket-three'>
-                              <a>
-                                <span>
-                                    <i className='expect-ticket-three-i'>9</i>
-                                    <span className='expect-ticket-three-name'>年会不能停！</span>
-                                    <span className='expect-ticket-three-number'>122万人想看</span>
-                                </span>
-                              </a>
-                             </li>
-                             
+                            {/* 3 */}
+                            <li className='expect-ticket-three'>
+                                <a>
+                                    <span>
+                                        <i className='expect-ticket-three-i'>4</i>
+                                        <span className='expect-ticket-three-name'>年会不能停！</span>
+                                        <span className='expect-ticket-three-number'>122万人想看</span>
+                                    </span>
+                                </a>
+                            </li>
+                            {expect.map(expects=>(
+                                <li className='expect-ticket-three' key={expects.id}>
+                                <a>
+                                    <span>
+                                        <i className='expect-ticket-three-i'>{expects.i}</i>
+                                        <span className='expect-ticket-three-name'>{expects.name}</span>
+                                        <span className='expect-ticket-three-number'>{expects.number}万人想看</span>
+                                    </span>
+                                </a>
+                            </li>
+                            ))}
 
-                       
+
+
                         </ul>
                     </div>
                 </div>
 
                 {/* 排行榜 */}
                 <div className='top-ticket'>
-                    <p style={{color:'#d1c08d',fontSize:'30px'}}>TOP 100</p>
+                    <p style={{ color: '#d1c08d', fontSize: '30px' }}>TOP 100</p>
                     <ul>
                         {/* 1 */}
                         <li className='top-ticket-one'>
@@ -874,115 +418,18 @@ const Home = () => {
                             </a>
                         </li>
                         {/* 2 */}
-                        <li className='top-ticket-two'>
+                        
+                        {topdata.map(topdatas=>(
+                            <li className='top-ticket-two' key={topdatas.id}>
                             <a>
                                 <span>
-                                    <i className='top-ticket-two-i'>2</i>
-                                    <span className='top-ticket-two-name'>年会不能停！</span>
-                                    <span className='top-ticket-two-number'>9.0分</span>
+                                    <i className='top-ticket-two-i'>{topdatas.i}</i>
+                                    <span className='top-ticket-two-name'>{topdatas.name}</span>
+                                    <span className='top-ticket-two-number'>{topdatas.number}分</span>
                                 </span>
                             </a>
                         </li>
-
-                        {/* 3 */}
-                        <li className='top-ticket-two'>
-                            <a>
-                                <span>
-                                    <i className='top-ticket-two-i'>3</i>
-                                    <span className='top-ticket-two-name'>年会不能停！</span>
-                                    <span className='top-ticket-two-number'>9.0分</span>
-                                </span>
-                            </a>
-                        </li>
-
-                         {/* 3 */}
-                         <li className='top-ticket-two'>
-                            <a>
-                                <span>
-                                    <i className='top-ticket-two-i'>3</i>
-                                    <span className='top-ticket-two-name'>年会不能停！</span>
-                                    <span className='top-ticket-two-number'>9.0分</span>
-                                </span>
-                            </a>
-                        </li>
-
-                         {/* 3 */}
-                         <li className='top-ticket-two'>
-                            <a>
-                                <span>
-                                    <i className='top-ticket-two-i'>3</i>
-                                    <span className='top-ticket-two-name'>年会不能停！</span>
-                                    <span className='top-ticket-two-number'>9.0分</span>
-                                </span>
-                            </a>
-                        </li>
-
-                         {/* 3 */}
-                         <li className='top-ticket-two'>
-                            <a>
-                                <span>
-                                    <i className='top-ticket-two-i'>3</i>
-                                    <span className='top-ticket-two-name'>年会不能停！</span>
-                                    <span className='top-ticket-two-number'>9.0分</span>
-                                </span>
-                            </a>
-                        </li>
-
-                         {/* 3 */}
-                         <li className='top-ticket-two'>
-                            <a>
-                                <span>
-                                    <i className='top-ticket-two-i'>3</i>
-                                    <span className='top-ticket-two-name'>年会不能停！</span>
-                                    <span className='top-ticket-two-number'>9.0分</span>
-                                </span>
-                            </a>
-                        </li>
-
-                         {/* 3 */}
-                         <li className='top-ticket-two'>
-                            <a>
-                                <span>
-                                    <i className='top-ticket-two-i'>3</i>
-                                    <span className='top-ticket-two-name'>年会不能停！</span>
-                                    <span className='top-ticket-two-number'>9.0分</span>
-                                </span>
-                            </a>
-                        </li>
-                         {/* 3 */}
-                         <li className='top-ticket-two'>
-                            <a>
-                                <span>
-                                    <i className='top-ticket-two-i'>3</i>
-                                    <span className='top-ticket-two-name'>年会不能停！</span>
-                                    <span className='top-ticket-two-number'>9.0分</span>
-                                </span>
-                            </a>
-                        </li>
-                         {/* 3 */}
-                         <li className='top-ticket-two'>
-                            <a>
-                                <span>
-                                    <i className='top-ticket-two-i'>3</i>
-                                    <span className='top-ticket-two-name'>年会不能停！</span>
-                                    <span className='top-ticket-two-number'>9.0分</span>
-                                </span>
-                            </a>
-                        </li>
-                         {/* 3 */}
-                         <li className='top-ticket-two'>
-                            <a>
-                                <span>
-                                    <i className='top-ticket-two-i'>3</i>
-                                    <span className='top-ticket-two-name'>年会不能停！</span>
-                                    <span className='top-ticket-two-number'>9.0分</span>
-                                </span>
-                            </a>
-                        </li>
-
-                       
-
-
+                        ))}
                     </ul>
                 </div>
             </div>
@@ -990,9 +437,9 @@ const Home = () => {
             {/* 底部基础信息 */}
             <div className='di-main'>
                 <div className='di-main-wen'>
-                <p>商务合作邮箱：v@maoyan.com 客服电话：10105335 违法和不良信息/涉未成年人有害信息举报电话：4006018900</p>
-                <p>用户举报/涉未成年人有害信息举报邮箱：tousujubao@meituan.com 舞弊线索举报邮箱：wubijubao@maoyan.com</p>
-                <p>广播电视节目制作经营许可证 （京）字第08478号  网络文化经营许可证 京网文（2022）1334-041号</p>
+                    <p>商务合作邮箱：v@maoyan.com 客服电话：10105335 违法和不良信息/涉未成年人有害信息举报电话：4006018900</p>
+                    <p>用户举报/涉未成年人有害信息举报邮箱：tousujubao@meituan.com 舞弊线索举报邮箱：wubijubao@maoyan.com</p>
+                    <p>广播电视节目制作经营许可证 （京）字第08478号  网络文化经营许可证 京网文（2022）1334-041号</p>
                 </div>
             </div>
 

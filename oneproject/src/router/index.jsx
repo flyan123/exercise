@@ -13,6 +13,8 @@ import Comedy from '../pages/Shop/Shopyedif/Comedy'
 import Cartoon from '../pages/Shop/Shopyedif/Cartoon'
 // 注册页
 import Register from '../pages/User/Register/index'
+// 详情页
+import Onehome from '../pages/detail/onehome'
 
 import TopNav from '../components/TopNav/indext'
 
@@ -40,6 +42,8 @@ const AppRouter=()=>{
                 <Route path='/cartoon' Component={Cartoon}></Route>
                 {/* 注册页 */}
                 <Route path='/register' Component={Register}></Route>
+                {/* 详情页 */}
+                <Route path='/onehome' Component={Onehome}></Route>
             </Routes>
         </Router>
     )
