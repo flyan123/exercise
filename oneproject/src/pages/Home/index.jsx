@@ -1,5 +1,5 @@
 import {React,useState} from 'react'
-import "./style.less"
+import "./home.less"
 import Swiper from '../../components/Swiper'
 import Banner1 from '../../assets/images/banner1.png'
 import Banner2 from '../../assets/images/banner2.png'
@@ -10,6 +10,8 @@ import soudata from './data/soudata.json'
 import today from './data/today.json'
 import expect from './data/expect.json'
 import topdata from './data/topdata.json'
+import Buttonzu from '../../components/Buttonzu/index'
+
 // import onehome from '../detail/onehome'
 
 const Home = () => {
@@ -347,7 +349,7 @@ const Home = () => {
                             </li><br />
 
                             {/* 2 */}
-                            <li className='expect-ticket-two'>
+                            <li className='expect-ticket-two' style={{ "width": "170px"}}>
                                 <a href='#'>
                                     <div className='expect-ticket-two-photo'>
                                         <img src='https://p0.meituan.net/mmc/f5523879ec43bdcbda484c5f0e7cf3262776.png@170w_118h_1e_1c' />
@@ -358,7 +360,7 @@ const Home = () => {
                                     </div>
                                 </a>
                             </li>
-                            <li className='expect-ticket-two-r'>
+                            <li className='expect-ticket-two-r' >
                                 <a href='#'>
                                     <div className='expect-ticket-two-photo'>
                                         <img src='https://p0.meituan.net/mmc/f5523879ec43bdcbda484c5f0e7cf3262776.png@170w_118h_1e_1c' />
@@ -372,7 +374,7 @@ const Home = () => {
                             <br />
 
                             {/* 3 */}
-                            <li className='expect-ticket-three'>
+                            <li className='expect-ticket-three' >
                                 <a>
                                     <span>
                                         <i className='expect-ticket-three-i'>4</i>
@@ -433,16 +435,6 @@ const Home = () => {
                     </ul>
                 </div>
             </div>
-
-            {/* 底部基础信息 */}
-            <div className='di-main'>
-                <div className='di-main-wen'>
-                    <p>商务合作邮箱：v@maoyan.com 客服电话：10105335 违法和不良信息/涉未成年人有害信息举报电话：4006018900</p>
-                    <p>用户举报/涉未成年人有害信息举报邮箱：tousujubao@meituan.com 舞弊线索举报邮箱：wubijubao@maoyan.com</p>
-                    <p>广播电视节目制作经营许可证 （京）字第08478号  网络文化经营许可证 京网文（2022）1334-041号</p>
-                </div>
-            </div>
-
         </div>
 
     )
@@ -462,6 +454,7 @@ function HomeSearch() {
                     />
                 </form>
             </div>
+            <div id='homedi'><Buttonzu/></div>
         </div>
     )
 }

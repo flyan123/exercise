@@ -17,6 +17,7 @@ import Register from '../pages/User/Register/index'
 import Onehome from '../pages/detail/onehome'
 
 import TopNav from '../components/TopNav/indext'
+import Buttonzu from '../components/Buttonzu/index'
 
 const AppRouter=()=>{
     return(
@@ -45,7 +46,11 @@ const AppRouter=()=>{
                 {/* 详情页 */}
                 <Route path='/onehome' Component={Onehome}></Route>
             </Routes>
+            {/* 底部 */}
+            {/* <Buttonzu style={{"position": "absolute",
+    "bottom": "0%"}}/> */}
         </Router>
+        
     )
 }
 
