@@ -8,7 +8,7 @@ export default function User() {
 
     return (
         <div >
-            <p>登入页面</p>
+            {/* <p>登入页面</p> */}
             <Login />
         </div>
     )

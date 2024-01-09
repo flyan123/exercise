@@ -360,7 +360,7 @@ const Home = () => {
                                     </div>
                                 </a>
                             </li>
-                            <li className='expect-ticket-two-r' >
+                            <li className='expect-ticket-two-r' style={{ "width": "170px"}} >
                                 <a href='#'>
                                     <div className='expect-ticket-two-photo'>
                                         <img src='https://p0.meituan.net/mmc/f5523879ec43bdcbda484c5f0e7cf3262776.png@170w_118h_1e_1c' />
