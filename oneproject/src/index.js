@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import App from './App';
 import "./style.less"
+// 配置路由
 import AppRouter from './router';
 
 
