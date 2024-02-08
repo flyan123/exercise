@@ -16,8 +16,11 @@ import Register from '../pages/User/Register/index'
 // 详情页
 import Onehome from '../pages/detail/onehome'
 
+// 搜索页详情
+import Searchmain from '../pages/Searchmain/index'
+
 import TopNav from '../components/TopNav/indext'
-import Buttonzu from '../components/Buttonzu/index'
+// import Buttonzu from '../components/Buttonzu/index'
 
 const AppRouter=()=>{
     return(
@@ -45,6 +48,9 @@ const AppRouter=()=>{
                 <Route path='/register' Component={Register}></Route>
                 {/* 详情页 */}
                 <Route path='/onehome' Component={Onehome}></Route>
+                {/* 搜索页详情 */}
+                <Route path='/searchmain' Component={Searchmain}></Route>
+
             </Routes>
             {/* 底部 */}
             {/* <Buttonzu style={{"position": "absolute",

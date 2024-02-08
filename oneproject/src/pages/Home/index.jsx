@@ -11,6 +11,8 @@ import today from './data/today.json'
 import expect from './data/expect.json'
 import topdata from './data/topdata.json'
 import Buttonzu from '../../components/Buttonzu/index'
+// import Searchmain from '../Searchmain'
+import { NavLink } from "react-router-dom";
 
 // import onehome from '../detail/onehome'
 
@@ -18,8 +20,11 @@ const Home = () => {
     // const [data, setData] = useState(require('./data.json'))
     // 年会不能停！的详情页
     const onehandleClick = () => {  
-        window.location.href = 'http://localhost:3000/#/onehome';  
+        window.location.href = 'http://localhost:3000/#/onehome'; 
+        
       };  
+    
+      
     return (
         <div>
             
@@ -440,30 +445,28 @@ const Home = () => {
     )
 }
 function HomeSearch() {
+    const onSearchmain = () => {  
+        window.location.href = 'http://localhost:3000/?#/searchmain ';
+      };  
     return (
         <div className='HomeSearch'>
             <div ><img className='home-search-tu'
                 src='https://tse4-mm.cn.bing.net/th/id/OIP-C.dBr7MmPncuvzT0NLXUwm2wAAAA?w=161&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7'
 
             /></div>
-            <div>
-                <form>
+            <div onClick={onSearchmain}>
+                <form >
                     <input
                         placeholder='搜索'
                         className='home-search'
                     />
+                    
                 </form>
             </div>
             <div id='homedi'><Buttonzu/></div>
         </div>
     )
 }
-function Homeluntu() {
-    return (
-        <div>
 
-        </div>
-    )
-}
 
 export default Home
