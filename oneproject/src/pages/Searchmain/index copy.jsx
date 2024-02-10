@@ -397,6 +397,9 @@ const PRODUCTS = [
   {category: "Vegetables", price: "$1", stocked: true, name: "Peas"}
 ];
 
+
+
+
 export default function App() {
   return <FilterableProductTable products={PRODUCTS} />;
 }
