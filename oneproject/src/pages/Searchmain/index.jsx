@@ -86,12 +86,34 @@ function ProductTable({ products, filterText }) {
     );
   }
 
-  function ProductRow({ product }) {
+  function ProductRow({ products }) {
 
     return (
       <tr>
           <div className='tu-kuang'>
             <ul>
+                {products.map(product=>(
+                    <li key={product.id}>
+                    <div className='seletu-name' >
+                        {/* 图片 */}
+                        <div className='seletu-tu'>
+                            <a href='#' >
+                                <div >
+                                    {/* src={src} */}
+                                    <img
+                                        src={product.src} />
+                                </div>
+                            </a>
+                        </div>
+                        {/* 购票小标 */}
+                        <div className='seletu-biao'>购票</div>
+                        {/* 电影名：name={name} */}
+                        <div className='seletu-tu-name'><a href='#' style={{ color: 'black' }}>{product.name}</a></div>
+                        {/* 评分：score={score} */}
+                        <div className='seletu-tu-score'>{product.score}</div>
+                    </div>
+                 </li>
+                ))}
             <li>
                 <div className='seletu-name' >
                     {/* 图片 */}
@@ -114,7 +136,7 @@ function ProductTable({ products, filterText }) {
              </li>
             </ul>
             </div>
-        <td>{product.name}</td>
+        {/* <td>{product.name}</td> */}
         <td>{product.price}</td>
       </tr>
     );
