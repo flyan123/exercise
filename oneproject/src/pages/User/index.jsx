@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import "./style.less"
 import { NavLink } from "react-router-dom";
-
+import logstyle from './login.module.less'
+import  './login.less'
+import initLoginBg from "./init.ts";
+// 引入ant design
+import { Input, Space ,Flex ,Button} from 'antd';
 
 export default function User() {
 
@@ -16,21 +20,74 @@ export default function User() {
 
 // 登入框
 function Login() {
+    useEffect(() => {
+        initLoginBg();
+        Window.onresive = function () { initLoginBg() }
+        // 自适应背景
+    }, [])
 
+   const [usernameVal,setUsernameVal]=useState('')
+   const [passworldVal,setPassworldVal]=useState('')
+   const [captchaVal,setCaptchaVal]=useState('')
+    
+   const usernameChange=(e)=>{
+    setUsernameVal(e.target.value)
+   }
+   const passworldChange=(e)=>{
+    setPassworldVal(e.target.value)
+   }
+   const captchaChange=(e)=>{
+    setCaptchaVal(e.target.value)
+   }
+
+//    按钮事件
+const gotoLogin=()=>{
+    console.log("用户输入的用户名，密码，验证码分别是；",usernameVal,passworldVal,captchaVal)
+}
     return (
         <div className="allloginone">
             <div className='loginone'>
 
                 <div className='loginoneinto'>
-                    <form id='loginform'>
-                        <label className='username'>
-                            账号：<input className='usernamek' />
-                        </label><br /><br /><br />
-                        <label className='usercode'>
-                            密码：<input type='password' class='usercodek' />
-                        </label><br />
-                        <button type='submit' class='loginsumbit'>登  入</button>
-                    </form>
+                {/* 内容 */}
+                    <div className={logstyle.loginPage}>
+                        {/* 存放背景 */}
+                        <canvas id="canvas" style={{ display: "block", width: '1536px', height: '683px' }}></canvas>
+                        {/* 页面内容 */}
+                        <div className={logstyle.loginBox}>
+                            {/* 标题部分 */}
+                            <div className={logstyle.title}>
+                                <h1>后台系统</h1>
+                                <p>Every day</p>
+                            </div>
+                            {/* 表单部分 */}
+                            <div className="loginbox-form">
+
+                                <Space direction="vertical" size="large" style={{ display: 'flex' }}>
+
+
+                                    <div className="input-username"> <Input placeholder="用户名" onChange={usernameChange} /></div>
+
+                                    <div className="input-possworld"> <Input.Password placeholder="密码" onChange={passworldChange} /></div>
+
+                                    <div className="captchaBox">
+                                        <div className="input-username"> <Input style={{ width: '353px' }} placeholder="验证码" onChange={captchaChange} /></div>
+                                        <div className="captchaImg">
+                                            <img style={{ height: '31.6px' }} src="http://web.900112.com/public/safecode.asp?" />
+                                        </div>
+                                    </div>
+
+                                    <Flex vertical gap="small" style={{ width: '100%', }}>
+                                        <Button type="primary" block onClick={gotoLogin}>
+                                            登入
+                                        </Button>
+                                    </Flex>
+                                </Space>
+                            </div>
+
+                        </div>
+                    </div>
+                    {/* 注册账号 */}
                     <NavLink exact to='/register' id="registername" >
                         注册账号
                     </NavLink>

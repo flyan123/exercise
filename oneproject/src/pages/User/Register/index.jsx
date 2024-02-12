@@ -1,71 +1,198 @@
-import React from "react";
+import React, {  useState } from 'react';
 import { NavLink } from "react-router-dom";
 import './style.less'
+import signupstyle from './sig.module.less'
+import {
+  Button,
+  Checkbox,
+  Form,
+  Input,
+  Select,
+} from 'antd';
+
+
+// const { Option } = Select;
+
+const formItemLayout = {
+  labelCol: {
+    xs: {
+      span: 24,
+    },
+    sm: {
+      span: 8,
+    },
+  },
+  wrapperCol: {
+    xs: {
+      span: 24,
+    },
+    sm: {
+      span: 16,
+    },
+  },
+};
+const tailFormItemLayout = {
+  wrapperCol: {
+    xs: {
+      span: 24,
+      offset: 0,
+    },
+    sm: {
+      span: 16,
+      offset: 8,
+    },
+  },
+};
 
 
 const Register = () => {
+
+    const [form] = Form.useForm();
+  const onFinish = (values) => {
+    console.log('管理员新用户输入的: ', values);
+    // console.log(this.state.nickname);
+  };
+
+  // 解构 赋值 多个变量
+  const [values, setValues] = useState();  
+  
+  //更新字段  
+  const handleInputChange = (e) => {  
+    const { label, value } = e.target;  
+    setValues(prevValues => ({  
+      ...prevValues,  
+      [label]: value, // 使用计算属性名称来动态更新对应字段的值  
+    }));  
+  };  
     return (
         <div className="register-bj">
             <div className="rg_layout">
-            {/* 新用户注册 */}
+                {/* 新用户注册 */}
                 <div className="rg_left">
                     <p>新用户注册</p>
                 </div>
                 {/* 内容 */}
-                <div className="rg_center">
-                    
-                    <div className="rg_form">
-                        <form action="#" method="post" >
-                            <table>
-                                {/* 用户名 */}
-                                <tr>
-                                    {/* <!--label 标签的作用是当点击文字也会跳到文本输出框--> */}
-                                    {/* <!--for属性与ID属性对应规定 label 绑定到哪个表单元素。--> */}
-                                    <td className="td_left"><label for="username">用户名</label> </td>
-                                    <td className="td_right"><input type="text" name="username" id="user-name" /> </td>
-                                </tr>
-                                {/* 密码 */}
-                                <tr>
-                                    <td className="td_left"><label for="password">密码</label> </td>
-                                    <td className="td_right"><input type="password" name="password" id="password" /> </td>
-                                </tr>
-                                {/* email */}
-                                <tr>
-                                    {/* <!--label 标签的作用是当点击文字也会跳到文本输出框--> */}
-                                    <td className="td_left"><label for="email">email</label> </td>
-                                    <td className="td_right"><input type="email" name="email" id="email" /> </td>
-                                </tr>
-                                {/* 姓名 */}
-                                <tr>
-                                    <td className="td_left"><label for="name">姓名</label> </td>
-                                    <td className="td_right"><input type="text" name="name" id="name" /> </td>
-                                </tr>
-                                {/* 手机号 */}
-                                <tr>
-                                    <td className="td_left"><label for="tel">手机号</label> </td>
-                                    <td className="td_right"><input type="text" name="tel" id="tel" /> </td>
-                                </tr>
-                                    {/* 发送验证码 */}
-                                <tr>
-                                    <td className="td_left"><label for="checkcode">验证码</label> </td>
-                                    <td className="td_right">
-                                        <input type="text" name="username" id="checkcode" />
-                                        <input type="button" value="发送验证码" />
-                                        <img src="images/verify_code.jpg" id="img_check"></img>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    {/* 注册 */}
-                                    <td colspan="2" align="center">
-                                        <input type="submit" value="注册" id="btn_sub" />
-                                    </td>
-                                </tr>
+                <div className={signupstyle.all}>
 
-                            </table>
-                        </form>
-                        
-                    </div>
-                   
+                    <Form
+                        {...formItemLayout}
+                        form={form}
+                        name="register"
+                        onFinish={onFinish}
+                        initialValues={{
+                            residence: ['zhejiang', 'hangzhou', 'xihu'],
+                            prefix: '86',
+                        }}
+                        style={{
+                            maxWidth: 700,
+                        }}
+                        scrollToFirstError
+                    >
+                        {/* 1 */}
+                        {/* <h1>管理员注册</h1> */}
+
+                        {/* 2. 用户名 nickname */}
+                        <Form.Item
+                            name="nickname"
+                            label="用户名"
+
+                            tooltip="你希望别人怎么称呼你?"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: '请输入您的昵称!',
+                                    whitespace: true,
+                                },
+                            ]}
+                        >
+                            <Input />
+                        </Form.Item>
+
+
+                        {/*3.  密码 password */}
+                        <Form.Item
+                            name="password"
+                            label="密码"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: '请输入您的密码!',
+                                },
+                            ]}
+                            hasFeedback
+                        >
+                            <Input.Password />
+                        </Form.Item>
+
+
+                        {/* 4. 确认密码 confirm */}
+                        <Form.Item
+                            name="confirm"
+                            label="确认密码"
+                            dependencies={['password']}
+                            hasFeedback
+                            rules={[
+                                {
+                                    required: true,
+                                    message: '请确认您的密码!',
+                                },
+                                ({ getFieldValue }) => ({
+                                    validator(_, value) {
+                                        if (!value || getFieldValue('password') === value) {
+                                            return Promise.resolve();
+                                        }
+                                        return Promise.reject(new Error('您输入的新密码不匹配!'));
+                                    },
+                                }),
+                            ]}
+                        >
+                            <Input.Password />
+                        </Form.Item>
+
+
+                        {/* 5. 电子邮件 email */}
+                        <Form.Item
+                            name="email"
+                            label="email"
+                            rules={[
+                                {
+                                    type: 'email',
+                                    message: '输入无效的电子邮件!',
+                                },
+                                {
+                                    required: true,
+                                    message: '请输入您的邮箱!',
+                                },
+                            ]}
+                        >
+                            <Input />
+                        </Form.Item>
+
+                        {/* 8.协议 */}
+                        <Form.Item
+                            name="agreement"
+                            valuePropName="checked"
+                            rules={[
+                                {
+                                    validator: (_, value) =>
+                                        value ? Promise.resolve() : Promise.reject(new Error('应该接受协议')),
+                                },
+                            ]}
+                            {...tailFormItemLayout}
+                        >
+                            <Checkbox>
+                                我已经阅读了 <a href="">协议</a>
+                            </Checkbox>
+                        </Form.Item>
+
+
+                        <Form.Item {...tailFormItemLayout}>
+                            <Button type="primary" htmlType="submit" >
+                                注册
+                            </Button>
+                        </Form.Item>
+
+                    </Form>
                 </div>
                 {/* 已有账号?立刻登入 */}
                 <div className="rg_right">
