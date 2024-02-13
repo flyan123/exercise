@@ -188,7 +188,10 @@ const Register = () => {
 
                         <Form.Item {...tailFormItemLayout}>
                             <Button type="primary" htmlType="submit" >
+                                <NavLink to='/user'>
                                 注册
+                                </NavLink>
+                            
                             </Button>
                         </Form.Item>
 

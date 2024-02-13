@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./style.less"
 import { NavLink } from "react-router-dom";
 import logstyle from './login.module.less'
 import  './login.less'
@@ -52,13 +51,12 @@ const gotoLogin=()=>{
                 {/* 内容 */}
                     <div className={logstyle.loginPage}>
                         {/* 存放背景 */}
-                        <canvas id="canvas" style={{ display: "block", width: '1536px', height: '683px' }}></canvas>
+                        <canvas id="canvas" style={{ display: "block", width: '1535px', height: '635px' }}></canvas>
                         {/* 页面内容 */}
                         <div className={logstyle.loginBox}>
                             {/* 标题部分 */}
                             <div className={logstyle.title}>
-                                <h1>后台系统</h1>
-                                <p>Every day</p>
+                                <h1>用户登入</h1>
                             </div>
                             {/* 表单部分 */}
                             <div className="loginbox-form">
@@ -76,21 +74,23 @@ const gotoLogin=()=>{
                                             <img style={{ height: '31.6px' }} src="http://web.900112.com/public/safecode.asp?" />
                                         </div>
                                     </div>
-
+                                    <NavLink to='/userpeo'>
                                     <Flex vertical gap="small" style={{ width: '100%', }}>
                                         <Button type="primary" block onClick={gotoLogin}>
                                             登入
                                         </Button>
                                     </Flex>
+                                    </NavLink>
+                                    {/* 注册账号 */}
+                                        <NavLink exact to='/register' id="registername" >
+                                            注册账号
+                                        </NavLink>
                                 </Space>
                             </div>
 
                         </div>
                     </div>
-                    {/* 注册账号 */}
-                    <NavLink exact to='/register' id="registername" >
-                        注册账号
-                    </NavLink>
+                    
                 </div>
             </div>
         </div>
